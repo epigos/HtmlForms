@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Htmlforms : html forms object,forms with php,php html forms,php class for forms" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Htmlforms</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/epigos/HtmlForms">View on GitHub</a>
+
+          <h1 id="project_title">Htmlforms</h1>
+          <h2 id="project_tagline">html forms object,forms with php,php html forms,php class for forms</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/epigos/HtmlForms/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/epigos/HtmlForms/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>HtmlForms Object</h1>
+
+<p>A singleton PHP object which provides convenience and fast methods for creating HTML forms with validations. 
+  It uses jquery validation plugins to validate forms.</p>
+
+<p>When you build as many dynamic CMS-like websites as me, you end up having to manipulate single HTML forms attributes with a bunch of logic and  validation issues and the code can start looking ugly.
+It's small, easy to use, and produces beautiful code and forms</p>
+
+<p>The class is pretty simple. When you instantiate the class, you feed it the form attributes. Once the form is created, you use start() to open the form tag and use the createInput(), createTextarea(), createSelectvalues() methods to create your form elements and finally use the end() to close the form tag.
+You can choose my default jquery validation or use your own validation by setting the $useValidation variable to false.</p>
+
+<h2>Basic Example</h2>
+
+<p>You can get the object's instance as this:   </p>
+
+<pre><code>&lt;?php
+
+include "htmlforms.php";
+
+//assign form attributes with $useValidation set to true
+
+$form = new HtmlForms(array('name'=&gt;'contact','method'=&gt;'post','id'=&gt;'contact','action'=&gt;'contact.php'),true);
+
+//open form tag
+
+$form-&gt;start();
+
+//creates a hidden input.
+
+$form-&gt;createInput(null,array(
+'name'=&gt;'Send_contact',
+'id'=&gt;'Send_contact',
+'type'=&gt;'hidden',
+'value'=&gt;'yes'
+
+));
+
+
+//create an input with validation.
+
+$form-&gt;createInput('Enter your Email',array(
+     //attributes as array
+'name'=&gt;'email',
+'id'=&gt;'email',
+'type'=&gt;'text',
+'title'=&gt;'Enter your Email'
+
+),array(
+    //validation as array
+
+    'required'=&gt;'true',
+    'email'=&gt;'true'
+) );
+</code></pre>
+
+<p>//creates a textarea without validation.</p>
+
+<pre><code>$form-&gt;createTextarea('Enter your message',array(
+'name'=&gt;'message',
+'id'=&gt;'message',
+'title'=&gt;'Enter your message',
+
+));
+</code></pre>
+
+<p>// create a select option.</p>
+
+<pre><code>$form-&gt;createSelect('Select type',array(
+'name'=&gt;'type',
+'id'=&gt;'type',
+'title'=&gt;'Select type'
+),array(
+    'required'=&gt;'true'
+),
+array( 
+   //options as array
+    'Select Type...'=&gt;array('value'=&gt;""),
+    'Free'=&gt;array('value'=&gt;'free'),
+    'Premium'=&gt;array('value'=&gt;'premium')
+) );
+
+// customize form buttons.
+
+$form-&gt;renameButtons('send','clear');
+
+//close form tag.
+
+$form-&gt;end();    
+     ?&gt;
+</code></pre>
+
+<p>Check for detail documentation  @ <a href="http://philipcodings.com">http://philipcodings.com</a></p>
+
+<h2>Author</h2>
+
+<p>Philip Adzanoukpe</p>
+
+<p>github: epigos</p>
+
+<h2>License</h2>
+
+<p>Copyright (C) 2012 by philipcodings.com</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Htmlforms maintained by <a href="https://github.com/epigos">epigos</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
