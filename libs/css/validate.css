@@ -1,0 +1,36 @@
+/* 
+    Document   : validate
+    Created on : Jul 23, 2012, 4:36:36 PM
+    Author     : Epigos
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.error_container{
+    display: none; width:68%; margin:5px 0 2px 0;
+    -webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+        border:1px solid #67ACC2 ;
+        padding: 10px;
+        
+	color: #ce2700;
+}
+.error_container h5{
+    font-size:12px;
+    font-family: sans-serif;
+}
+.error_container li{
+    list-style-type: circle;
+    margin-left:8px;
+}
+
+
+#form { padding: 20px;  width:550px; margin: 20px auto; color:#67ACC2;}
+#form input { width: 388px; color: #333; padding: 5px; border: 1px solid #ccc;  background: #fff; clear:right;}
+#form label.error{color:red; width:100%; margin:5px 0 2px 0}
+#form  label { display: block; width: auto; margin-top: 15px; margin-bottom: 5px; font-size: 14px; text-align: left; }
+#form textarea{width: 388px; height: 100px; padding: 5px; color: #333; border: 1px solid #ccc;  background: #fff; font-size:14px}
+#form select { width: 388px;padding: 5px; color: #333; border: 1px solid #ccc;  background: #fff; font-size:14px;}
+#form  .button { margin: 10px 0px; padding: 5px 14px; border: 1px solid #ccc; background: #fff; width: auto; color:#67ACC2;}
+#form p{text-align: center;width: 388px; }
